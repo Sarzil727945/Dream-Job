@@ -21,8 +21,9 @@ const Statistics = () => {
                     </div>
                </header>
                {/* header part end  */}
+
                <section className='my-5'>
-                    <div className='text-center mb-5'>
+                    <div className='text-center mt-5 mb-4'>
                          <h1>Job Category List</h1>
                          <p>Explore thousands of job opportunities with all the information you need. Its your future</p>
                     </div>
@@ -33,6 +34,22 @@ const Statistics = () => {
                                    data={data}
                               ></JobList>)
                          }
+                    </div>
+               </section>
+               {/* job list section end  */}
+
+               <section className='my-lg-5 pt-lg-3'>
+                    <div className='text-center mt-lg-5 mb-4'>
+                         <h1>Featured Jobs</h1>
+                         <p>Explore thousands of job opportunities with all the information you need. Its your future</p>
+                    </div>
+                    <div className='row'>
+                         {/* {
+                              jobListData.map(data => <JobList
+                                   key={data.id}
+                                   data={data}
+                              ></JobList>)
+                         } */}
                     </div>
                </section>
           </div>
