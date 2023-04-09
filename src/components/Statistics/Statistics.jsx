@@ -1,11 +1,14 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import './Statistics.css'
+import JobList from '../JobList/JobList';
+import { useLoaderData } from 'react-router-dom';
 
 const Statistics = () => {
+     const jobListData = useLoaderData();
      return (
-          <div className=' mt-5 pt-5'>
-               <header className='container py-lg-5'>
+          <div className='container mt-5 pt-5'>
+               <header className=' py-lg-5'>
                     <div className='row'>
                          <div className='col-lg-6 my-4'>
                               <h1 className='display-4 fw-bold'>One Step <br /> Closer To Your <br /> <span className='text-info'>Dream Job</span></h1>
@@ -17,9 +20,20 @@ const Statistics = () => {
                          </div>
                     </div>
                </header>
-          {/* header part end  */}
-               <section>
-
+               {/* header part end  */}
+               <section className='my-5'>
+                    <div className='text-center mb-5'>
+                         <h1>Job Category List</h1>
+                         <p>Explore thousands of job opportunities with all the information you need. Its your future</p>
+                    </div>
+                    <div className='row'>
+                         {
+                              jobListData.map(data => <JobList
+                                   key={data.id}
+                                   data={data}
+                              ></JobList>)
+                         }
+                    </div>
                </section>
           </div>
      );
