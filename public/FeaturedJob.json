@@ -42,7 +42,8 @@
     {
         "id": 5,
         "name": "Mrs. Arif",
-        "date": "Mar 18 (8 Days ago)",
+        "location": "Mar 18 (8 Days ago)",
+        "salary": "Salary : 80K - 100K",
         "description": "How to get your first job as a self-taught programmer",
         "watchTime": 15,
         "logo": "https://cdn.logojoy.com/wp-content/uploads/2018/08/01114707/accountingd.png",

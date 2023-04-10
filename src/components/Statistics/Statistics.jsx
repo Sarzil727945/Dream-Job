@@ -3,15 +3,16 @@ import { Button } from 'react-bootstrap';
 import './Statistics.css'
 import JobList from '../JobList/JobList';
 import { useLoaderData } from 'react-router-dom';
+import FeaturedJob from '../FeaturedJob/FeaturedJob';
 
 const Statistics = () => {
-     // const jobListData = useLoaderData();
      const [jobListData, setJobListData] = useState([])
      useEffect(() =>{
           fetch('JobList.json')
           .then(res => res.json())
           .then(data => setJobListData(data))
      },[])
+     const featuredJobData = useLoaderData();
      return (
           <div className='container mt-5 pt-5'>
                <header className=' py-lg-5'>
@@ -50,12 +51,12 @@ const Statistics = () => {
                          <p>Explore thousands of job opportunities with all the information you need. Its your future</p>
                     </div>
                     <div className='row'>
-                         {/* {
-                              jobListData.map(data => <JobList
+                         {
+                              featuredJobData.map(data => <FeaturedJob 
                                    key={data.id}
-                                   data={data}
-                              ></JobList>)
-                         } */}
+                                   jobData ={data}
+                              ></FeaturedJob>)
+                         }
                     </div>
                </section>
           </div>
