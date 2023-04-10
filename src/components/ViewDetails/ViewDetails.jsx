@@ -19,7 +19,7 @@ const ViewDetails = () => {
 
      }
      productsAndCartData()
-     const { jDescription, jResponsibility, eRequirements, Experiences, salary, jobTitle, Phone, Email, Address, name } = jobJsonData
+     const { jDescription, jResponsibility, eRequirements, Experiences, salary, jobTitle, Phone, Email, Address } = jobJsonData
 
 
      return (
@@ -59,7 +59,7 @@ const ViewDetails = () => {
                          </div>
                          <div className="d-grid mx-auto">
                               <button className="btn btn-primary" type="button">
-                                   <ActiveLink className='text-decoration-none' to={`/statistics/${id}`}>Apply Now</ActiveLink>
+                                   <ActiveLink className='text-decoration-none' to={`/applied/${id}`}>Apply Now</ActiveLink>
                               </button>
 
                          </div>

@@ -3,7 +3,7 @@ import { Button, Card } from 'react-bootstrap';
 import { Link} from 'react-router-dom';
 
 const FeaturedJob = ({ jobData }) => {
-     const { logo, jobTitle, location, salary, id, name } = jobData;
+     const { logo, jobTitle, location, salary, id, name, btn1, btn2 } = jobData;
      return (
           <div className='col-lg-6 mb-3'>
                <div>
@@ -14,8 +14,8 @@ const FeaturedJob = ({ jobData }) => {
                               <Card.Subtitle className=" text-muted mb-2">
                                    {name}
                               </Card.Subtitle>
-                              <Button variant="outline-info" className='m-2'>Remote</Button>
-                              <Button variant="outline-info" className='m-2'>Full Time</Button>
+                              <Button variant="outline-info" className='m-2'>{btn1}</Button>
+                              <Button variant="outline-info" className='m-2'>{btn2}</Button>
                               <Card.Subtitle className=" text-muted my-2">
                                    <span className='me-3'>{location}</span>
                                    <span> Salary :  {salary}</span>
