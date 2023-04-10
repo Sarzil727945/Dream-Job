@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import './Statistics.css'
 import JobList from '../JobList/JobList';
 import { useLoaderData } from 'react-router-dom';
 
 const Statistics = () => {
-     const jobListData = useLoaderData();
+     // const jobListData = useLoaderData();
+     const [jobListData, setJobListData] = useState([])
+     useEffect(() =>{
+          fetch('JobList.json')
+          .then(res => res.json())
+          .then(data => setJobListData(data))
+     },[])
      return (
           <div className='container mt-5 pt-5'>
                <header className=' py-lg-5'>

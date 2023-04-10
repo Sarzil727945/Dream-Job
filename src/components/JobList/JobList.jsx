@@ -3,7 +3,6 @@ import './JobList.css'
 import { Card } from 'react-bootstrap';
 
 const JobList = ({ data }) => {
-     console.log(data)
      const {img, name, job} = data;
      return (
           <div className='col-lg-3 mb-3'>

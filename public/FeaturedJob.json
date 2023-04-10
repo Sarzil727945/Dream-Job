@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name": "Technical Database Engineer",
+        "location": "Dhaka, Bangladesh",
+        "salary": "Salary : 80K - 100K",
+        "description": "How to get your first job as a self-taught programmer",
+        "watchTime": 5,
+        "logo": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+        "img":"https://img.freepik.com/free-photo/man-isolated-showing-emotions-end-gestures_1303-30095.jpg?w=996&t=st=1680191510~exp=1680192110~hmac=c1927d854a9228e69bde8b458a120e8cb4e2584760c2bb1bce7a1a1f4748cea6"
+    },
+    {
+        "id": 2,
+        "name": "Senior Product Designer",
+        "location": "Rajshahi, Bangladesh",
+        "salary": "Salary : 150K - 200K",
+        "description": "How to get your first job as a self-taught programmer",
+        "watchTime": 8,
+        "logo": "https://cdn.logojoy.com/wp-content/uploads/2018/08/01114704/accountinge.png",
+        "img":"https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=996&t=st=1680191233~exp=1680191833~hmac=77078410060eb516ca094683319f3f6911dd69d662c6228c82445b33b95d7eb9"
+    },
+    {
+        "id": 3,
+        "name": "Software Engineer",
+        "location": "Naogaon, Bangladesh",
+        "salary": "Salary : 120K - 150K",
+        "description": "How to get your first job as a self-taught programmer",
+        "watchTime": 10,
+        "logo": "https://cdn.logojoy.com/wp-content/uploads/2018/08/01114706/accountingb.png",
+        "img":"https://img.freepik.com/free-photo/waist-up-portrait-handsome-serious-unshaven-male-keeps-hands-together-dressed-dark-blue-shirt-has-talk-with-interlocutor-stands-against-white-wall-self-confident-man-freelancer_273609-16320.jpg?w=996&t=st=1680191310~exp=1680191910~hmac=a1b3a93e5c68d9367f65f708b1b97b0c9d41cee67619d14467e572acc2b5f387"
+    },
+    {
+        "id": 4,
+        "name": "Motion Graphic Designer",
+        "location": "Dhaka, Bangladesh",
+        "salary": "Salary : 100K - 150K",
+        "description": "How to get your first job as a self-taught programmer",
+        "watchTime": 12,
+        "logo": "https://cdn.logojoy.com/wp-content/uploads/2018/08/01114752/accounting17.png",
+        "img":"https://img.freepik.com/free-photo/handsome-bearded-businessman-rubbing-hands-having-deal_176420-18778.jpg?w=996&t=st=1680191355~exp=1680191955~hmac=d4cf7e8eea3625daf71ea1b03e843751eadb60d1178e1f938a458e0792a71368"
+    },
+    {
+        "id": 5,
+        "name": "Mrs. Arif",
+        "date": "Mar 18 (8 Days ago)",
+        "description": "How to get your first job as a self-taught programmer",
+        "watchTime": 15,
+        "logo": "https://cdn.logojoy.com/wp-content/uploads/2018/08/01114707/accountingd.png",
+        "img":"https://img.freepik.com/free-photo/portrait-successful-man-having-stubble-posing-with-broad-smile-keeping-arms-folded_171337-1267.jpg?w=996&t=st=1680191443~exp=1680192043~hmac=3858a1db39b2c35d5a78932e47d69838e073816f16a45508daa8e55b55e2e27c"
+    }  
+]

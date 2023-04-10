@@ -3,24 +3,25 @@
         "id": 1,
         "name": "Account & Finance",
         "job": "300 Jobs Available",
-        "img":"https://img.freepik.com/free-photo/man-isolated-showing-emotions-end-gestures_1303-30095.jpg?w=996&t=st=1680191510~exp=1680192110~hmac=c1927d854a9228e69bde8b458a120e8cb4e2584760c2bb1bce7a1a1f4748cea6"
+        "img":"https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x.png"
     },
     {
         "id": 2,
         "name": "Creative Design",
         "job": "100+ Jobs Available",
-        "img":"https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=996&t=st=1680191233~exp=1680191833~hmac=77078410060eb516ca094683319f3f6911dd69d662c6228c82445b33b95d7eb9"
+        "img":"https://www.facebook.com/images/fb_icon_325x325.png"
     },
     {
         "id": 3,
         "name": "Marketing & Sales",
         "job": "150 Jobs Available",
-        "img":"https://img.freepik.com/free-photo/waist-up-portrait-handsome-serious-unshaven-male-keeps-hands-together-dressed-dark-blue-shirt-has-talk-with-interlocutor-stands-against-white-wall-self-confident-man-freelancer_273609-16320.jpg?w=996&t=st=1680191310~exp=1680191910~hmac=a1b3a93e5c68d9367f65f708b1b97b0c9d41cee67619d14467e572acc2b5f387"
+        "img":"https://www.amazon.com/favicon.ico"
     },
     {
         "id": 4,
         "name": "Engineering Job",
         "job": "224 Jobs Available",
-        "img":"https://img.freepik.com/free-photo/handsome-bearded-businessman-rubbing-hands-having-deal_176420-18778.jpg?w=996&t=st=1680191355~exp=1680191955~hmac=d4cf7e8eea3625daf71ea1b03e843751eadb60d1178e1f938a458e0792a71368"
+        "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1024px-Microsoft_logo.svg.png"
     }
+    
 ]
