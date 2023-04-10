@@ -1,23 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 const ViewDetails = () => {
+
      const { id } = useParams();
-
-     // const [idData, setIdData] = useState([])
      const [jobJsonData, setJobJsonData] = useState([]);
-     // useEffect(() => {
-     //      fetch('/FeaturedJob.json')
-     //           .then(res => res.json())
-     //           .then(data => setJobJsonData(data))
-
-     //      if (id) {
-     //           const foundProduct = jobJsonData.find(pd => pd.id === +id)
-     //           setIdData(foundProduct);
-     //      }
-
-     // }, [jobJsonData])
 
      const productsAndCartData = async () => {
           const productsData = await fetch('/FeaturedJob.json')
@@ -68,8 +57,11 @@ const ViewDetails = () => {
                                    <p><b>Address: </b> {Address}</p>
                               </div>
                          </div>
-                         <div class="d-grid mx-auto">
-                              <button class="btn btn-primary" type="button">Apply Now</button>
+                         <div className="d-grid mx-auto">
+                              <button className="btn btn-primary" type="button">
+                                   <ActiveLink className='text-decoration-none' to={`/statistics/${id}`}>Apply Now</ActiveLink>
+                              </button>
+
                          </div>
                     </div>
 

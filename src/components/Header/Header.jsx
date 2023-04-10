@@ -22,7 +22,8 @@ const Header = () => {
                                    style={{ maxHeight: '100px' }}
                                    navbarScroll
                               >
-                                   <ActiveLink to="/">Statistics</ActiveLink>
+                                   <ActiveLink to="/">Home</ActiveLink>
+                                   <ActiveLink to="/statistics">Statistics</ActiveLink>
                                    <ActiveLink to="/applied">Applied Jobs</ActiveLink>
                                    <ActiveLink to="/blog">Blog</ActiveLink>
                               </Nav>

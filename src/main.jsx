@@ -6,10 +6,11 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Main from './components/Main/Main';
-import Statistics from './components/Statistics/Statistics';
 import AppliedJob from './components/AppliedJob/AppliedJob';
 import Blog from './components/Blog/Blog';
 import ViewDetails from './components/ViewDetails/ViewDetails';
+import Home from './components/Home/Home';
+import Statistics from './components/Statistics/Statistics';
 
 const router = createBrowserRouter([
   {
@@ -18,8 +19,13 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element:<Statistics></Statistics>,
+        element:<Home></Home>,
         loader: () => fetch("FeaturedJob.json"),
+      },
+      {
+        path: "/statistics/:id",
+        element:<Statistics></Statistics>,
+        loader:({params}) => fetch(`/FeaturedJob.json/${params.id}`)
       },
       {
         path: "/viewDetails/:id",
