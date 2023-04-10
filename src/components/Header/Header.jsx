@@ -27,7 +27,7 @@ const Header = () => {
                                    <ActiveLink to="/blog">Blog</ActiveLink>
                               </Nav>
                               <Form className="d-flex">
-                              <Button variant="success" className='py-2'>Star Applying</Button>
+                              <Button variant="info" className='py-2'>Star Applying</Button>
                               </Form>
                          </Navbar.Collapse>
                     </Container>

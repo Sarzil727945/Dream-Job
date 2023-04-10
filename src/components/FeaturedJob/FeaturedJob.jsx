@@ -1,9 +1,9 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
+import { Link} from 'react-router-dom';
 
-const FeaturedJob = ({jobData}) => {
-     const {logo, name, location, salary}=jobData
-     console.log(jobData)
+const FeaturedJob = ({ jobData }) => {
+     const { logo, name, location, salary, id } = jobData;
      return (
           <div className='col-lg-6 mb-3'>
                <div>
@@ -11,10 +11,15 @@ const FeaturedJob = ({jobData}) => {
                          <Card.Body>
                               <img className='CartImgStyle' src={logo} alt="" />
                               <Card.Title className=''>{name}</Card.Title>
-                              <Card.Subtitle className=" text-muted">
+                              <Button variant="outline-info" className='m-2'>Remote</Button>
+                              <Button variant="outline-info" className='m-2'>Full Time</Button>
+                              <Card.Subtitle className=" text-muted my-2">
                                    <span className='me-3'>{location}</span>
                                    <span> {salary}</span>
-                                   </Card.Subtitle>
+                              </Card.Subtitle>
+                              <Button variant="info">
+                                   <Link to={`/viewDetails/${id}`}>View Details</Link>
+                              </Button>
                          </Card.Body>
                     </Card>
                </div>
