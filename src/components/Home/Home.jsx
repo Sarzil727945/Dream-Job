@@ -14,6 +14,22 @@ const Home = () => {
      },[])
      const featuredJobData = useLoaderData();
 
+     // ShowAll data part start
+     const [dataArr, setDataArr] = useState([])
+      const showAll =(id) =>{
+          if (id === featuredJobData.length) {
+               const allData = featuredJobData.filter(data => data.id <= id)
+               setDataArr(allData)  
+          }
+          else{
+               const allData = featuredJobData.filter(data => data.id <= id)
+               return(allData)  
+          }
+      }
+    const allDataArr =  dataArr.length === 6 ? dataArr : showAll(4);
+    // ShowAll data part end
+
+
      return (
           <div className='container mt-5 pt-5'>
                <header className=' py-lg-5'>
@@ -53,11 +69,12 @@ const Home = () => {
                     </div>
                     <div className='row'>
                          {
-                              featuredJobData.map(data => <FeaturedJob 
+                              allDataArr.map(data => <FeaturedJob 
                                    key={data.id}
                                    jobData ={data}
                               ></FeaturedJob>)
                          }
+                         <Button onClick={()=> showAll(featuredJobData.length)} variant="info" className='mt-3 mb-5 p-2 seeAllBtn'>See All Jobs</Button>
                     </div>
                </section>
           </div>
