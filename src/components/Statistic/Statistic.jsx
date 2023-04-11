@@ -50,8 +50,9 @@ const Statistic = () => {
      ];
      return (
           <div className='mt-5 pt-5'>
-               <h1 className='py-5 text-center'>Statistics</h1>
+               <h1 className='py-lg-5 text-center'>Assignment Analytics</h1>
                <ComposedChart
+               id='statistic'
                     width={1200}
                     height={400}
                     data={data}
@@ -61,7 +62,7 @@ const Statistic = () => {
                          bottom: 20,
                          left: 20,
                     }}
-                    className='statistic d-flex justify-content-center mx-auto'
+                    className='d-flex justify-content-center mx-auto w-75'
                >
                     <CartesianGrid stroke="#f5f5f5" />
                     <XAxis dataKey="name" scale="band" />
