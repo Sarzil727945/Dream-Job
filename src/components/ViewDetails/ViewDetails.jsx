@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import ActiveLink from '../ActiveLink/ActiveLink';
+import { HiOutlineLocationMarker } from 'react-icons/hi';
+import { BiPhoneCall } from 'react-icons/bi';
+import { AiTwotoneMail, AiOutlineDollarCircle } from 'react-icons/ai';
+import {MdOutlineSubtitles} from 'react-icons/md';
 import './ViewDetails.css'
 
 const ViewDetails = () => {
@@ -38,24 +42,35 @@ const ViewDetails = () => {
                     </div>
                     <div className='col-lg-4'>
                          <div className="card text-bg-info mb-3">
-                              <div className="card-header"><b>Job Details {id}
+                              <div className="card-header"><b>Job Details :  {id}
                               </b>
                               </div>
                               <div className="card-body">
-                                   <p className="card-text"><b>Salary: </b>
+                                   <p className="card-text">
+                                        <AiOutlineDollarCircle className='icon fs-5 me-1 mb-1'/>
+                                        <b>Salary: </b>
                                         {salary} (Per Month)
                                    </p>
-                                   <p><b>Job Title: </b> {jobTitle}</p>
+                                   <p>
+                                        <MdOutlineSubtitles className='icon fs-5 me-1 mb-1'/>
+                                        <b>Job Title: </b> {jobTitle}</p>
                               </div>
                               <div className="card-header"><b>Contact Information
                               </b>
                               </div>
                               <div className="card-body">
-                                   <p className="card-text"><b>Phone: </b>
+                                   <p className="card-text">
+                                        <BiPhoneCall className='icon fs-5 me-1 mb-1' />
+                                        <b>Phone: </b>
                                         {Phone}
                                    </p>
-                                   <p><b>Email: </b> {Email}</p>
-                                   <p><b>Address: </b> {Address}</p>
+                                   <p>
+                                        <AiTwotoneMail className='icon fs-5 mb-1' />
+                                        <b className='ms-1'>Email: </b> {Email}</p>
+                                   <p>
+                                        <HiOutlineLocationMarker className="icon fs-5 mb-1 me-1" />
+                                        <b>Address: </b>
+                                        {Address}</p>
                               </div>
                          </div>
                          <div className="d-grid mx-auto">

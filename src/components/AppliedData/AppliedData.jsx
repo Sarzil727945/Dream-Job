@@ -2,10 +2,12 @@ import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import './AppliedData.css'
 import { Link } from 'react-router-dom';
+import { HiOutlineLocationMarker } from 'react-icons/hi';
+import { AiOutlineDollarCircle } from 'react-icons/ai';
 
 const AppliedData = ({ data }) => {
      console.log(data)
-     const { logo, id, jobTitle, name, btn1, btn2, location, salary} = data
+     const { logo, id, jobTitle, name, btn1, btn2, location, salary } = data
      return (
           <div className='container'>
                <div className="card mb-3">
@@ -22,9 +24,12 @@ const AppliedData = ({ data }) => {
                                              <Button variant="outline-info" className='my-1'>{btn1}</Button>
                                              <Button variant="outline-info" className='my-1 ms-2'>{btn2}</Button>
                                              <Card.Subtitle className=" text-muted my-2">
-                                   <span className='me-3'>{location}</span>
-                                   <span> Salary :  {salary}</span>
-                              </Card.Subtitle>
+                                                  <span className='me-3'>
+                                                       <HiOutlineLocationMarker className="icon fs-5 mb-1" />
+                                                       {location}</span>
+                                                  <AiOutlineDollarCircle className='icon fs-5 mb-1' />
+                                                  <span> Salary :  {salary}</span>
+                                             </Card.Subtitle>
                                         </div>
                                    </div>
                               </div>

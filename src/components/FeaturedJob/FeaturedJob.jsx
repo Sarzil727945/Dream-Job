@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { Link} from 'react-router-dom';
+import {HiOutlineLocationMarker} from 'react-icons/hi';
+import {AiOutlineDollarCircle} from 'react-icons/ai';
 import './FeaturedJob.css'
 
 const FeaturedJob = ({ jobData }) => {
@@ -15,10 +17,12 @@ const FeaturedJob = ({ jobData }) => {
                               <Card.Subtitle className=" text-muted mb-2">
                                    {name}
                               </Card.Subtitle>
-                              <Button variant="outline-info" className='m-2'>{btn1}</Button>
-                              <Button variant="outline-info" className='m-2'>{btn2}</Button>
-                              <Card.Subtitle className=" text-muted my-2">
-                                   <span className='me-3'>{location}</span>
+                              <Button variant="outline-info" className='mt-2'>{btn1}</Button>
+                              <Button variant="outline-info" className='mt-2 ms-2'>{btn2}</Button>
+                              <Card.Subtitle className=" text-muted my-3">
+                                   <span className='me-3'>
+                                        <HiOutlineLocationMarker className="icon fs-5 mb-1"/> {location}</span>
+                                        <AiOutlineDollarCircle className='icon fs-5 mb-1'/>
                                    <span> Salary :  {salary}</span>
                               </Card.Subtitle>
                               <Button  variant="info">
