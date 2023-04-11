@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { addToDb, getStoredCart } from '../../utils/fakeDB';
 import AppliedData from '../AppliedData/AppliedData';
+import { Button } from 'react-bootstrap';
 
 const AppliedJobs = () => {
      const { id } = useParams();
@@ -29,6 +30,11 @@ const AppliedJobs = () => {
      return (
           <div className='mt-5 pt-5'>
                <h1 className='text-center my-5'>Applied Jobs</h1>
+               <div className='d-flex justify-content-end container my-4'>
+                    <Button variant="info" className='my-1'>Onsite</Button>
+                    <Button variant="info" className='my-1 ms-3'>Remote</Button>
+               </div>
+               {/* <Button variant="outline-info" className='my-1 ms-2'>{btn2}</Button> */}
                <div>
                     {
                          lcData.map(data => <AppliedData
