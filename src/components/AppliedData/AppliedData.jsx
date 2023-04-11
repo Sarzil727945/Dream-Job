@@ -6,7 +6,6 @@ import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { AiOutlineDollarCircle } from 'react-icons/ai';
 
 const AppliedData = ({ data }) => {
-     console.log(data)
      const { logo, id, jobTitle, name, btn1, btn2, location, salary } = data
      return (
           <div className='container'>
