@@ -9,7 +9,7 @@ const JobList = ({ data }) => {
                <div>
                     <Card className='p-3'>
                          <Card.Body>
-                              <img className='CartImgStyle mb-4' src={img} alt="" />
+                              <img className='CartImgStyle1 mb-4' src={img} alt="" />
                               <Card.Title className='mt-4'>{name}</Card.Title>
                               <Card.Subtitle className="mb-2 text-muted">{job}</Card.Subtitle>
                          </Card.Body>

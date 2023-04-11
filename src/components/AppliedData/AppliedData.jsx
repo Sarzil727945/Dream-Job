@@ -1,24 +1,30 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
+import './AppliedData.css'
 import { Link } from 'react-router-dom';
 
 const AppliedData = ({ data }) => {
      console.log(data)
-     const { logo, id } = data
+     const { logo, id, jobTitle, name, btn1, btn2, location, salary} = data
      return (
           <div className='container'>
                <div className="card mb-3">
                     <div className='row'>
-                         <div className='col-lg-8'>
+                         <div className='col-lg-8 p-3'>
                               <div className="row g-0">
                                    <div className="col-md-4">
-                                        <img src={logo} className="img-fluid rounded-start" alt="..." />
+                                        <img src={logo} className="img-fluid rounded rounded-start mx-lg-2 imgStyle" alt="..." />
                                    </div>
-                                   <div className="col-md-8">
+                                   <div className="col-md-8 ps-lg-3">
                                         <div className="card-body">
-                                             <h5 className="card-title">Card title</h5>
-                                             <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                             <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                                             <h5 className="card-title">{jobTitle}</h5>
+                                             <p className="card-text"><b className="text-muted">{name}</b></p>
+                                             <Button variant="outline-info" className='my-1'>{btn1}</Button>
+                                             <Button variant="outline-info" className='my-1 ms-2'>{btn2}</Button>
+                                             <Card.Subtitle className=" text-muted my-2">
+                                   <span className='me-3'>{location}</span>
+                                   <span> Salary :  {salary}</span>
+                              </Card.Subtitle>
                                         </div>
                                    </div>
                               </div>

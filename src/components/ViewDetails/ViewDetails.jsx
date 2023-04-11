@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import ActiveLink from '../ActiveLink/ActiveLink';
+import './ViewDetails.css'
 
 const ViewDetails = () => {
 
@@ -58,7 +59,7 @@ const ViewDetails = () => {
                               </div>
                          </div>
                          <div className="d-grid mx-auto">
-                              <button className="btn btn-primary" type="button">
+                              <button className="btn btn-primary btnStyle" type="button">
                                    <ActiveLink className='text-decoration-none' to={`/applied/${id}`}>Apply Now</ActiveLink>
                               </button>
 

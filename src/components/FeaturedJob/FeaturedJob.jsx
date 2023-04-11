@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { Link} from 'react-router-dom';
+import './FeaturedJob.css'
 
 const FeaturedJob = ({ jobData }) => {
      const { logo, jobTitle, location, salary, id, name, btn1, btn2 } = jobData;
@@ -9,7 +10,7 @@ const FeaturedJob = ({ jobData }) => {
                <div>
                     <Card className=''>
                          <Card.Body>
-                              <img className='CartImgStyle' src={logo} alt="" />
+                              <img className='CartImgStyle2' src={logo} alt="" />
                               <Card.Title className='mt-4'>{jobTitle}</Card.Title>
                               <Card.Subtitle className=" text-muted mb-2">
                                    {name}
