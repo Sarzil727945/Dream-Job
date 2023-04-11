@@ -74,7 +74,7 @@ const ViewDetails = () => {
                               </div>
                          </div>
                          <div className="d-grid mx-auto">
-                              <button className="btn btn-primary btnStyle" type="button">
+                              <button className="btn btn-success btnStyle" type="button">
                                    <ActiveLink className='text-decoration-none' to={`/applied/${id}`}>Apply Now</ActiveLink>
                               </button>
 
