@@ -11,7 +11,7 @@ import ViewDetails from './components/ViewDetails/ViewDetails';
 import Home from './components/Home/Home';
 import Statistic from './components/Statistic/Statistic';
 import AppliedJobs from './components/AppliedJobs/AppliedJobs';
-import ErrorPage from './ErrorPage';
+import ErrorPage from './components/ErrorPage';
 
 const router = createBrowserRouter([
   {

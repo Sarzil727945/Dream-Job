@@ -40,7 +40,7 @@ const Home = () => {
                               <Button variant="info" className='py-2 my-3'>Get Started</Button>
                          </div>
                          <div className='col-lg-6 '>
-                              <img src="/public/img3.png" className=' img-fluid imgStyle1' alt="" />
+                              <img src="https://img.freepik.com/free-photo/portrait-smiling-handsome-man-eyeglasses_171337-4853.jpg?w=996&t=st=1681271348~exp=1681271948~hmac=0053fa96353ea56f4f6b102af4dd75a2fabc8907c27b5267931ee08f150d857e" className=' img-fluid imgStyle1' alt="" />
                          </div>
                     </div>
                </header>

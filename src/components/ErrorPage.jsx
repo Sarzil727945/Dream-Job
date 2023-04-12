@@ -8,7 +8,7 @@ const ErrorPage = () => {
     <section className='my-5 py-3'>
       <div className='container px-5 mx-auto my-8'>
         <div className=' text-center'>
-          <img src="/public/error.png" alt="" />
+          <img src="/src/assets/error.png" alt="" />
           <h1 className='display-2 fw-bold text-danger'>
             <span>Error</span> {status || 'status code not available'}
           </h1>
