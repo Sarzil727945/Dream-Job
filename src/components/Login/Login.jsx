@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { AiFillEyeInvisible } from 'react-icons/ai'
 import { Link } from 'react-router-dom';
@@ -9,15 +9,18 @@ const Login = () => {
      const [success, setSuccess] = useState('')
      const [passwordShown, setPasswordShown] = useState(false);
 
-     const { user, signIn} = useContext(AuthContext)
+     const { user, signIn, resetPassword } = useContext(AuthContext)
 
-      // passwordShown function start 
-          const togglePassword = () => {
-               setPasswordShown(!passwordShown);
-          };
-      // passwordShown function end
+     const emailRef = useRef()
 
-     const handelLogin = (event) =>{
+     // passwordShown function start 
+     const togglePassword = () => {
+          setPasswordShown(!passwordShown);
+     };
+     // passwordShown function end
+
+     // main form part start 
+     const handelLogin = (event) => {
           event.preventDefault();
           setError('')
           setSuccess('')
@@ -27,32 +30,54 @@ const Login = () => {
 
           // Signed in part start
           signIn(email, password)
-          .then((userCredential) => {
-               const currentUser = userCredential.user;
-               setSuccess('Sign in successFull')
-               form.reset()
-               console.log(currentUser);
-             })
-             .catch((error) => {
-               const errorMessage = error.message;
-               setError(errorMessage)
-             });
-             // Signed in part end
+               .then((userCredential) => {
+                    const currentUser = userCredential.user;
+                    setSuccess('Sign in successFull')
+                    form.reset()
+               })
+               .catch((error) => {
+                    const errorMessage = error.message;
+                    setError(errorMessage)
+               });
+          // Signed in part end
      }
+     // main form part end
+
+     // Reset Password part start 
+     const handelResetPassword = () => {
+          const email = emailRef.current.value;
+          console.log(email);
+          if (!email) {
+               alert('Please provide your email')
+               return
+          }
+
+          resetPassword(email)
+               .then(() => {
+                    alert('Please check you email')
+               })
+               .catch((error) => {
+                    const errorMessage = error.message;
+                    setError(errorMessage)
+               });
+
+     }
+     // Reset Password part end
 
      return (
           <div className='mt-5 py-5'>
                <h1 className='my-5 text-center'>This is Login Page</h1>
-               <div className=' col-lg-5 p-5 mx-auto'>
-               <Form onSubmit={handelLogin}>
+               <div className=' col-lg-4  mx-auto'>
+                    <Form onSubmit={handelLogin}>
                          <div className='border rounded px-5 py-4'>
 
                               <Form.Group className="mb-3" controlId="formBasicEmail">
                                    <Form.Label>Email</Form.Label>
                                    <Form.Control type="email" name='email'
-                                        placeholder="Email" required />
+                                        placeholder="Email" required 
+                                        ref={emailRef} />
                               </Form.Group>
-                         
+
                               <Form.Group className="mb-3" controlId="formBasicPassword">
                                    <Form.Label>Password</Form.Label>
                                    <div className='parentPasswordShow position-relative'>
@@ -72,6 +97,10 @@ const Login = () => {
                                    <Button variant="info" type="submit">
                                         Login
                                    </Button>
+                                   <div>
+                                        <small>Create your new Password?</small>
+                                        <button onClick={handelResetPassword} className='btn btn-link'>Reset Password</button>
+                                   </div>
                                    <div>
                                         <small className='me-2'>Please are you now?</small>
                                         <Link to='/'>Register</Link>

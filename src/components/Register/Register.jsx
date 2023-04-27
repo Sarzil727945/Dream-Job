@@ -4,6 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 import { AiFillEyeInvisible } from 'react-icons/ai'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 
 const Register = () => {
@@ -48,11 +49,13 @@ const Register = () => {
           createUser(email, password)
           .then((userCredential) => {
                const currentUser = userCredential.user;
+               console.log(currentUser);
                setSuccess('Create user account successFull')
                form.reset()
                setEmail('')
                Verification()
                console.log(currentUser);
+               upDataUser(currentUser, name)
              })
              .catch((error) => {
                const errorMessage = error.message;
@@ -85,6 +88,17 @@ const Register = () => {
      }
      // valid email function end
 
+     const upDataUser = (user, name)=>{
+          updateProfile(user, {
+               displayName: name
+          })
+          .then(() => {
+               // Profile updated!
+               // ...
+             }).catch((error) => {
+               setError(error.message)
+             });
+     }
 
      return (
           <div className=' mt-5 pt-5'>
