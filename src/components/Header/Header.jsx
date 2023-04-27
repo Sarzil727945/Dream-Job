@@ -38,7 +38,6 @@ const Header = () => {
                                    navbarScroll
                               >
                                    <ActiveLink to="/">Register</ActiveLink>
-                                   {/* <ActiveLink to="/login">Login</ActiveLink> */}
                                    <ActiveLink to="/home">Home</ActiveLink>
                                    <ActiveLink to="/statistics">Statistics</ActiveLink>
                                    <ActiveLink to="/applied">Applied Jobs</ActiveLink>

@@ -49,12 +49,10 @@ const Register = () => {
           createUser(email, password)
           .then((userCredential) => {
                const currentUser = userCredential.user;
-               console.log(currentUser);
                setSuccess('Create user account successFull')
                form.reset()
                setEmail('')
                Verification()
-               console.log(currentUser);
                upDataUser(currentUser, name)
              })
              .catch((error) => {

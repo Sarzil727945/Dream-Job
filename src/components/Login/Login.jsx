@@ -32,8 +32,12 @@ const Login = () => {
           signIn(email, password)
                .then((userCredential) => {
                     const currentUser = userCredential.user;
-                    setSuccess('Sign in successFull')
                     form.reset()
+                    if (!currentUser.emailVerified) {
+                         alert('your email did not verification')
+                         return
+                    }
+                    setSuccess('Sign in successFull')
                })
                .catch((error) => {
                     const errorMessage = error.message;
