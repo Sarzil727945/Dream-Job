@@ -15,6 +15,7 @@ import ErrorPage from './components/ErrorPage';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import AuthProvider from './AuthProvider/AuthProvider';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/home",
-        element: <Home></Home>,
+        element:<PrivateRoute><Home></Home></PrivateRoute>,
         loader: () => fetch("FeaturedJob.json"),
       },
       {
@@ -42,7 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/applied",
-        element: <AppliedJobs></AppliedJobs>,
+        element: <PrivateRoute><AppliedJobs></AppliedJobs></PrivateRoute>,
       },
       {
         path: "/viewDetails/:id",
@@ -55,11 +56,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/statistics",
-        element: <Statistic></Statistic>
+        element: <PrivateRoute><Statistic></Statistic></PrivateRoute>
       },
       {
         path: "/blog",
-        element: <Blog></Blog>,
+        element: <PrivateRoute><Blog></Blog></PrivateRoute>,
       },
 
     ]
