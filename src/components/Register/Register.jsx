@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Register.css';
 import { Button, Form } from 'react-bootstrap';
 import { AiFillEyeInvisible } from 'react-icons/ai'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+
 
 const Register = () => {
      const [passwordShown, setPasswordShown] = useState(false);
@@ -10,6 +12,9 @@ const Register = () => {
      const [success, setSuccess] = useState('');
      const [email, setEmail] = useState("")
      const [emailError, setEmailError] = useState('')
+
+     const { user, createUser, emailVerification} = useContext(AuthContext)
+
      // passwordShown function start 
      const [conformPasswordShown, setConformPasswordShown] = useState(false);
      const togglePassword = () => {
@@ -35,10 +40,36 @@ const Register = () => {
                setError("Don't mach this password")
                return
           }
-
-          console.log(name, email, password, conformPassword);
+          else if (!/(?=.*[A-Z])/.test(password)) {
+               setError('At least one upper case')
+               return
+          }
+          // Signed up part start
+          createUser(email, password)
+          .then((userCredential) => {
+               const currentUser = userCredential.user;
+               setSuccess('Create user account successFull')
+               form.reset()
+               setEmail('')
+               Verification()
+               console.log(currentUser);
+             })
+             .catch((error) => {
+               const errorMessage = error.message;
+               setError(errorMessage)
+             });
+             // Signed up part end
+         
      }
      // main form part end 
+
+     // emailVerification part start 
+     const Verification = ()=>{
+          emailVerification()
+          .then(() => {
+              alert('Verification your email')
+             });
+     }
 
 
      // valid email function start 
@@ -58,7 +89,7 @@ const Register = () => {
      return (
           <div className=' mt-5 pt-5'>
                <h1 className=' my-5 text-center'>This is Resister Page</h1>
-               <div className=' col-lg-3 mx-auto '>
+               <div className=' col-lg-4 mx-auto '>
                     <Form onSubmit={handelRegister}>
                          <div className='border rounded px-5 py-4'>
                               <Form.Group className="mb-3" controlId="formBasicEmail">

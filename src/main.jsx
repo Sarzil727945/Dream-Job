@@ -14,12 +14,13 @@ import AppliedJobs from './components/AppliedJobs/AppliedJobs';
 import ErrorPage from './components/ErrorPage';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
+import AuthProvider from './AuthProvider/AuthProvider';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    errorElement:<ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -31,43 +32,45 @@ const router = createBrowserRouter([
       },
       {
         path: "/home",
-        element:<Home></Home>,
+        element: <Home></Home>,
         loader: () => fetch("FeaturedJob.json"),
       },
       {
         path: "/applied/:id",
-        element:<AppliedJobs></AppliedJobs>,
-        loader:({params}) => fetch(`/FeaturedJob.json/${params.id}`)
+        element: <AppliedJobs></AppliedJobs>,
+        loader: ({ params }) => fetch(`/FeaturedJob.json/${params.id}`)
       },
       {
         path: "/applied",
-        element:<AppliedJobs></AppliedJobs>,
+        element: <AppliedJobs></AppliedJobs>,
       },
       {
         path: "/viewDetails/:id",
-        element:<ViewDetails></ViewDetails>,
-        loader:({params}) => fetch(`/FeaturedJob.json/${params.id}`)
+        element: <ViewDetails></ViewDetails>,
+        loader: ({ params }) => fetch(`/FeaturedJob.json/${params.id}`)
       },
       {
         path: "/viewDetails",
-        element:<ViewDetails></ViewDetails>,
+        element: <ViewDetails></ViewDetails>,
       },
       {
         path: "/statistics",
-        element:<Statistic></Statistic>
+        element: <Statistic></Statistic>
       },
       {
         path: "/blog",
-        element:<Blog></Blog>,
+        element: <Blog></Blog>,
       },
-      
-    ]  
+
+    ]
   },
-  
+
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
