@@ -110,9 +110,6 @@ const Login = () => {
                                    </div>
                               </div>
                          </div>
-                         {/* <div className="d-grid gap-2 my-5 col-6 mx-auto">
-                                   <Button onClick={handelGoogleLogin} className="btn btn-success" type="button"> <span className=' fs-5 text-light'><ImGoogle2 /></span> Sign in with Google</Button>
-                              </div> */}
                     </Form>
                </div>
           </div>

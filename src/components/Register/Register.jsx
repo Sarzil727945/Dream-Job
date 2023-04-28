@@ -165,8 +165,8 @@ const Register = () => {
                                    <Button variant="info" type="submit">
                                         Register
                                    </Button>
-                         <div onClick={handelGoogleRegister} className="d-grid gap-2 my-3 col-9 mx-auto">
-                              <Button className="btn btn-success" type="button"> <span className=' fs-5 text-light'><ImGoogle2 /></span> Sign in with Google</Button>
+                         <div className="d-grid gap-2 my-3 col-9 mx-auto">
+                              <Button onClick={handelGoogleRegister}  className="btn btn-success" type="button"> <span className=' fs-5 text-light'><ImGoogle2 /></span> Sign in with Google</Button>
                          </div>
                                    <div>
                                         <small className='me-2'>Already have Account?</small>

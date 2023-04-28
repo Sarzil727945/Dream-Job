@@ -5,10 +5,12 @@ import { Navigate } from 'react-router-dom';
 const PrivateRoute = ({ children }) => {
      const { user, loading } = useContext(AuthContext)
      if (loading) {
-          return (<div class="text-center mt-5 pt-5">
-               <div class="spinner-border" role="status">
-                    <span class="visually-hidden">Loading...</span>
+          return (<div className='mt-5 pt-5'>
+               <div className="text-center mt-5 pt-5">
+               <div className="spinner-border" role="status">
+                    <span className="visually-hidden">Loading...</span>
                </div>
+          </div>
           </div>
           )
      }
