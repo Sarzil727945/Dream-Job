@@ -50,7 +50,6 @@ const Login = () => {
      // Reset Password part start 
      const handelResetPassword = () => {
           const email = emailRef.current.value;
-          console.log(email);
           if (!email) {
                alert('Please provide your email')
                return

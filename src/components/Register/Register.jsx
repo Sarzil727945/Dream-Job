@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import './Register.css';
 import { Button, Form } from 'react-bootstrap';
 import { AiFillEyeInvisible } from 'react-icons/ai'
+import { ImGoogle2 } from 'react-icons/im'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
@@ -14,7 +15,7 @@ const Register = () => {
      const [email, setEmail] = useState("")
      const [emailError, setEmailError] = useState('')
 
-     const { user, createUser, emailVerification} = useContext(AuthContext)
+     const { createUser, googlCreateUser, emailVerification } = useContext(AuthContext)
 
      // passwordShown function start 
      const [conformPasswordShown, setConformPasswordShown] = useState(false);
@@ -47,30 +48,31 @@ const Register = () => {
           }
           // Signed up part start
           createUser(email, password)
-          .then((userCredential) => {
-               const currentUser = userCredential.user;
-               setSuccess('Create user account successFull')
-               form.reset()
-               setEmail('')
-               Verification()
-               upDataUser(currentUser, name)
-             })
-             .catch((error) => {
-               const errorMessage = error.message;
-               setError(errorMessage)
-             });
-             // Signed up part end
-         
+               .then((userCredential) => {
+                    const currentUser = userCredential.user;
+                    setSuccess('Create user account successFull')
+                    form.reset()
+                    setEmail('')
+                    Verification()
+                    upDataUser(currentUser, name)
+               })
+               .catch((error) => {
+                    const errorMessage = error.message;
+                    setError(errorMessage)
+               });
+          // Signed up part end
+
      }
      // main form part end 
 
      // emailVerification part start 
-     const Verification = ()=>{
+     const Verification = () => {
           emailVerification()
-          .then(() => {
-              alert('Verification your email')
-             });
+               .then(() => {
+                    alert('Verification your email')
+               });
      }
+     // emailVerification part end
 
 
      // valid email function start 
@@ -86,17 +88,29 @@ const Register = () => {
      }
      // valid email function end
 
-     const upDataUser = (user, name)=>{
+     const upDataUser = (user, name) => {
           updateProfile(user, {
                displayName: name
           })
-          .then(() => {
-               // Profile updated!
-               // ...
+               .then(() => {
+                    // Profile updated!
+                    // ...
+               }).catch((error) => {
+                    setError(error.message)
+               });
+     }
+
+     // handelGoogleRegister part start
+     const handelGoogleRegister = () =>{
+          googlCreateUser()
+          .then((result) => {
+               const user = result.user;
              }).catch((error) => {
-               setError(error.message)
+               const errorMessage = error.message;
+               setError(errorMessage)
              });
      }
+     // handelGoogleRegister part end
 
      return (
           <div className=' mt-5 pt-5'>
@@ -151,15 +165,15 @@ const Register = () => {
                                    <Button variant="info" type="submit">
                                         Register
                                    </Button>
+                         <div onClick={handelGoogleRegister} className="d-grid gap-2 my-3 col-9 mx-auto">
+                              <Button className="btn btn-success" type="button"> <span className=' fs-5 text-light'><ImGoogle2 /></span> Sign in with Google</Button>
+                         </div>
                                    <div>
                                         <small className='me-2'>Already have Account?</small>
                                         <Link to='/login'>Login</Link>
                                    </div>
                               </div>
                          </div>
-                         {/* <div className="d-grid gap-2 my-5 col-6 mx-auto">
-                                   <Button onClick={handelGoogleLogin} className="btn btn-success" type="button"> <span className=' fs-5 text-light'><ImGoogle2 /></span> Sign in with Google</Button>
-                              </div> */}
                     </Form>
                </div>
           </div>
