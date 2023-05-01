@@ -12,10 +12,12 @@ const AuthProvider = ({ children }) => {
      const [loading, setLoading] = useState(true)
 
      const createUser = (email, password) =>{
+          setLoading(true)
           return createUserWithEmailAndPassword(auth, email, password)
      }
 
      const googlCreateUser = ()=>{
+          setLoading(true)
           return signInWithPopup(auth, provider)
      }
 
@@ -24,6 +26,7 @@ const AuthProvider = ({ children }) => {
      }
 
      const signIn = (email, password) =>{
+          setLoading(true)
           return signInWithEmailAndPassword(auth, email, password)
      }
 

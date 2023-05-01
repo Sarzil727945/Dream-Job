@@ -1,14 +1,21 @@
 import React, { useContext, useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { AiFillEyeInvisible } from 'react-icons/ai'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
      const [error, setError] = useState('')
      const [success, setSuccess] = useState('')
      const [passwordShown, setPasswordShown] = useState(false);
+     const navigate = useNavigate()
 
+     const location = useLocation()
+     console.log(location);
+
+     const from = location.state?.from?.pathname || '/home';
+     console.log(from);
+     
      const { user, signIn, resetPassword } = useContext(AuthContext)
 
      const emailRef = useRef()
@@ -33,6 +40,7 @@ const Login = () => {
                .then((userCredential) => {
                     const currentUser = userCredential.user;
                     form.reset()
+                    navigate(from, {replace: true})
                     if (!currentUser.emailVerified) {
                          alert('your email did not verification')
                          return
