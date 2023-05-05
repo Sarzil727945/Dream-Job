@@ -3,7 +3,7 @@ import './Register.css';
 import { Button, Form } from 'react-bootstrap';
 import { AiFillEyeInvisible } from 'react-icons/ai'
 import { ImGoogle2 } from 'react-icons/im'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 
@@ -16,6 +16,8 @@ const Register = () => {
      const [emailError, setEmailError] = useState('')
 
      const { createUser, googlCreateUser, emailVerification } = useContext(AuthContext)
+
+     const navigate = useNavigate();
 
      // passwordShown function start 
      const [conformPasswordShown, setConformPasswordShown] = useState(false);
@@ -52,6 +54,7 @@ const Register = () => {
                     const currentUser = userCredential.user;
                     setSuccess('Create user account successFull')
                     form.reset()
+                    navigate('/home')
                     setEmail('')
                     Verification()
                     upDataUser(currentUser, name)
@@ -105,6 +108,7 @@ const Register = () => {
           googlCreateUser()
           .then((result) => {
                const user = result.user;
+               navigate('/home')
              }).catch((error) => {
                const errorMessage = error.message;
                setError(errorMessage)
