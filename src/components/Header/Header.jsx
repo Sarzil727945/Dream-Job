@@ -43,13 +43,12 @@ const Header = () => {
                                    <ActiveLink to="/blog">Blog</ActiveLink>
                               </Nav>
                               <Form className="d-flex">
-                                   {/* {
+                                   {
                                         user ? <div>
-                                             <span className=' me-3'>{user.displayName}</span>
+                                             <img title={user.displayName} className='navImgStyle me-3' src={user.photoURL} alt="" />
                                              <Button onClick={handelLogOut} variant="info" className='py-2'>Log Out</Button>
                                         </div> : <ActiveLink to="/login">Login</ActiveLink>
-                                   } */}
-                                   <button type="button" class="btn btn-success">Success</button>
+                                   }
 
                               </Form>
                          </Navbar.Collapse>
