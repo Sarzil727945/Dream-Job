@@ -54,7 +54,7 @@ const Register = () => {
                     const currentUser = userCredential.user;
                     setSuccess('Create user account successFull')
                     form.reset()
-                    navigate('/home')
+                    navigate('/')
                     setEmail('')
                     Verification()
                     upDataUser(currentUser, name)

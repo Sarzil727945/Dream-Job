@@ -7,7 +7,7 @@ const ActiveLink = ({ to, children }) => {
           <div className='activeLink'>
                <NavLink
                     to={to}
-                    className={({ isActive }) => isActive ? "active" : ""}
+                    className={({ isActive }) => isActive ? "active" : "noActive"}
                >
                     {children}
                </NavLink>

@@ -102,7 +102,7 @@ const Footer = () => {
                                              </div>
                                              <div className="sa ">
                                                   <div className="followUs">
-                                                       <a href="#">
+                                                       <a href="https://mail.google.com/mail/u/0/#inbox">
                                                           <SiGmail/> 
                                                        </a>
                                                   </div>
@@ -118,8 +118,8 @@ const Footer = () => {
                <div className="container mt-3">
                     <p className="text-left">
                          &copy; Sarzil Muntaha @ <span className="text-info">Azmira Akhtar</span>
-                         <span className="text-info float-end">
-                              Back to top
+                         <span className=" float-end">
+                              <a href="#" className=' text-decoration-none text-info'>Back to top</a>
                          </span>
                     </p>
                </div>

@@ -11,11 +11,11 @@ import ViewDetails from './components/ViewDetails/ViewDetails';
 import Home from './components/Home/Home';
 import Statistic from './components/Statistic/Statistic';
 import AppliedJobs from './components/AppliedJobs/AppliedJobs';
-import ErrorPage from './components/ErrorPage';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import AuthProvider from './AuthProvider/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import ErrorPage from './components/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
@@ -24,26 +24,27 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
-        path: "/",
-        element: <Register></Register>
-      },
-      {
         path: "/login",
         element: <Login></Login>
       },
       {
-        path: "/home",
-        element:<PrivateRoute><Home></Home></PrivateRoute>,
+        path: "/register",
+        element: <Register></Register>
+      },
+
+      {
+        path: "/",
+        element:<Home></Home>,
         loader: () => fetch("FeaturedJob.json"),
       },
       {
         path: "/applied/:id",
-        element: <AppliedJobs></AppliedJobs>,
+        element: <PrivateRoute><AppliedJobs></AppliedJobs></PrivateRoute>,
         loader: ({ params }) => fetch(`/FeaturedJob.json/${params.id}`)
       },
       {
         path: "/applied",
-        element: <PrivateRoute><AppliedJobs></AppliedJobs></PrivateRoute>,
+        element: <AppliedJobs></AppliedJobs>,
       },
       {
         path: "/viewDetails/:id",
@@ -56,11 +57,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/statistics",
-        element: <PrivateRoute><Statistic></Statistic></PrivateRoute>
+        element: <Statistic></Statistic>,
       },
       {
         path: "/blog",
-        element: <PrivateRoute><Blog></Blog></PrivateRoute>,
+        element: <Blog></Blog>,
       },
 
     ]

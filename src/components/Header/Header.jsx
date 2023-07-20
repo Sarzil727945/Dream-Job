@@ -37,19 +37,19 @@ const Header = () => {
                                    style={{ maxHeight: '100px' }}
                                    navbarScroll
                               >
-                                   <ActiveLink to="/">Register</ActiveLink>
-                                   <ActiveLink to="/home">Home</ActiveLink>
+                                   <ActiveLink to="/">Home</ActiveLink>
                                    <ActiveLink to="/statistics">Statistics</ActiveLink>
                                    <ActiveLink to="/applied">Applied Jobs</ActiveLink>
                                    <ActiveLink to="/blog">Blog</ActiveLink>
                               </Nav>
                               <Form className="d-flex">
-                                   {
+                                   {/* {
                                         user ? <div>
                                              <span className=' me-3'>{user.displayName}</span>
                                              <Button onClick={handelLogOut} variant="info" className='py-2'>Log Out</Button>
                                         </div> : <ActiveLink to="/login">Login</ActiveLink>
-                                   }
+                                   } */}
+                                   <button type="button" class="btn btn-success">Success</button>
 
                               </Form>
                          </Navbar.Collapse>

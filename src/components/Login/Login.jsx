@@ -114,7 +114,7 @@ const Login = () => {
                                    </div>
                                    <div>
                                         <small className='me-2'>Please are you now?</small>
-                                        <Link to='/'>Register</Link>
+                                        <Link to='/register'>Register</Link>
                                    </div>
                               </div>
                          </div>

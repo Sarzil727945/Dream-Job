@@ -3,6 +3,17 @@
      text-decoration: none;
      margin: 0px 20px;
 }
+.noActive{
+     color: #132963;
+     font-weight: 500;
+}
+.noActive:hover{
+     color: #132963;
+}
 .active{
-     color: red;
+     color: rgb(213, 77, 62);
+     font-weight: 600;
+}
+.active:hover{
+     color: rgb(213, 77, 62);  
 }
